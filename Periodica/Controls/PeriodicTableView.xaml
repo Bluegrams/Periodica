@@ -1,0 +1,89 @@
+﻿<controls:PeriodicTableControl
+    x:Class="Bluegrams.Periodica.Controls.PeriodicTableView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Bluegrams.Periodica.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Margin="2" IsTabStop="False">
+    <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Auto" HorizontalScrollMode="Enabled"
+                  VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto"
+                  ZoomMode="Enabled" MinZoomFactor="0.4"
+                  SizeChanged="ScrollViewer_SizeChanged">
+        <Viewbox x:Name="viewTable" Stretch="Uniform">
+            <Grid x:Name="gridMain" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="FontSize" Value="10"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="1"/>
+                <TextBlock Grid.Column="2" Text="2"/>
+                <TextBlock Grid.Column="3" Text="3"/>
+                <TextBlock Grid.Column="4" Text="4"/>
+                <TextBlock Grid.Column="5" Text="5"/>
+                <TextBlock Grid.Column="6" Text="6"/>
+                <TextBlock Grid.Column="7" Text="7"/>
+                <TextBlock Grid.Column="8" Text="8"/>
+                <TextBlock Grid.Column="9" Text="9"/>
+                <TextBlock Grid.Column="10" Text="10"/>
+                <TextBlock Grid.Column="11" Text="11"/>
+                <TextBlock Grid.Column="12" Text="12"/>
+                <TextBlock Grid.Column="13" Text="13"/>
+                <TextBlock Grid.Column="14" Text="14"/>
+                <TextBlock Grid.Column="15" Text="15"/>
+                <TextBlock Grid.Column="16" Text="16"/>
+                <TextBlock Grid.Column="17" Text="17"/>
+                <TextBlock Grid.Column="18" Text="18"/>
+                <TextBlock Grid.Row="1" Text="1"/>
+                <TextBlock Grid.Row="2" Text="2"/>
+                <TextBlock Grid.Row="3" Text="3"/>
+                <TextBlock Grid.Row="4" Text="4"/>
+                <TextBlock Grid.Row="5" Text="5"/>
+                <TextBlock Grid.Row="6" Text="6"/>
+                <TextBlock Grid.Row="7" Text="7"/>
+                <TextBlock Grid.Column="3" Grid.Row="6" Text="*"/>
+                <TextBlock Grid.Column="3" Grid.Row="7" Text="**"/>
+                <TextBlock Grid.Column="3" Grid.Row="9" Text="*"/>
+                <TextBlock Grid.Column="3" Grid.Row="10" Text="**"/>
+            </Grid>
+        </Viewbox>
+    </ScrollViewer>
+</controls:PeriodicTableControl>

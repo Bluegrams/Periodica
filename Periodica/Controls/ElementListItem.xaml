@@ -1,0 +1,60 @@
+﻿<UserControl
+    x:Class="Bluegrams.Periodica.Controls.ElementListItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="using:Bluegrams.Periodica.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="100"
+    d:DesignWidth="400">
+    <UserControl.Resources>
+        <models:PropertyUnitConverter x:Key="unitConv"/>
+    </UserControl.Resources>
+
+    <Grid x:Name="panMain" BorderThickness="1.5" Background="{Binding ColorBrush}"
+          PointerEntered="panMain_PointerEntered" PointerExited="panMain_PointerExited" PointerCaptureLost="panMain_PointerExited">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="block1.FontSize" Value="15"/>
+                        <Setter Target="block2.FontSize" Value="15"/>
+                        <Setter Target="block3.FontSize" Value="15"/>
+                        <Setter Target="block4.FontSize" Value="15"/>
+                        <Setter Target="block5.FontSize" Value="15"/>
+                        <Setter Target="block6.FontSize" Value="15"/>
+                        <Setter Target="block7.FontSize" Value="15"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="4"/>
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" x:Name="block1" Text="{Binding Path=Element.AtomicNumber}" />
+        <TextBlock Grid.Column="1" x:Name="block2" Text="{Binding Path=Element.Symbol}"/>
+        <TextBlock Grid.Column="2" x:Name="block3" Text="{Binding Path=Element.LocalizedName}"/>
+        <TextBlock Grid.Column="3" x:Name="block4" Text="{Binding Path=Element, Mode=OneWay, Converter={StaticResource unitConv}, ConverterParameter=list:3}"/>
+        <TextBlock Grid.Column="4" x:Name="block5" Text="{Binding Path=Element, Mode=OneWay, Converter={StaticResource unitConv}, ConverterParameter=list:4}"/>
+        <TextBlock Grid.Column="5" x:Name="block6" Text="{Binding Path=Element, Mode=OneWay, Converter={StaticResource unitConv}, ConverterParameter=list:5}"/>
+        <TextBlock Grid.Column="6" x:Name="block7" Text="{Binding Path=Element, Mode=OneWay, Converter={StaticResource unitConv}, ConverterParameter=list:6}"/>
+    </Grid>
+</UserControl>

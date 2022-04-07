@@ -1,0 +1,79 @@
+﻿<UserControl
+    x:Class="Bluegrams.Periodica.Controls.AboutControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="styleTitle">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="LineHeight" Value="24"/>
+            <Setter Property="FontWeight" Value="SemiLight"/>
+            <Setter Property="Padding" Value="0,8"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="styleItem">
+            <Setter Property="Padding" Value="0,8"/>
+        </Style>
+        <Style TargetType="HyperlinkButton" x:Key="styleItemLink">
+            <Setter Property="Padding" Value="0,8"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0,8"/>
+            <Setter Property="Width" Value="250"/>
+        </Style>
+        <Style TargetType="SymbolIcon">
+            <Setter Property="Margin" Value="0,0,16,0"/>
+        </Style>
+        <Style TargetType="FontIcon">
+            <Setter Property="Margin" Value="0,0,16,0"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel>
+        <TextBlock Text="{x:Bind DisplayName}" Style="{StaticResource styleTitle}"/>
+        <TextBlock Style="{StaticResource styleItem}">
+            <Run Text="&#x00A9; "/>
+            <Run Text="{x:Bind Publisher}"/>
+        </TextBlock>
+        <TextBlock Style="{StaticResource styleItem}">
+            <Run x:Uid="TextVersion"/><Run Text=" "/>
+            <Run Text="{x:Bind PackageVersion}"/>
+        </TextBlock>
+        <HyperlinkButton Content="{x:Bind Website}" NavigateUri="{x:Bind Website}" Style="{StaticResource styleItemLink}"/>
+        <ContentPresenter Content="{x:Bind DescriptionContent}" Padding="0,8"/>
+        <Button Click="MailToButton_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="Mail"/>
+                    <TextBlock x:Uid="TextContact"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Click="RateButton_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="LikeDislike"/>
+                    <TextBlock x:Uid="TextRate"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button x:Name="feedbackButton" Visibility="Collapsed" Click="feedbackButton_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE939;"/>
+                    <TextBlock x:Uid="TextFeedback"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Click="DonateButton_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="Emoji2"/>
+                    <TextBlock x:Uid="TextDonate"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,43 @@
+﻿<UserControl
+    x:Class="Bluegrams.Periodica.Controls.ElementBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="userControl"
+    d:DesignHeight="300" d:DesignWidth="300"
+    Width="62" Height="74" ToolTipService.ToolTip="{x:Bind Element.Element.LocalizedName}"
+    Margin="2" GotFocus="userControl_GotFocus" LostFocus="userControl_LostFocus">
+    <StackPanel x:Name="panMain" Padding="4" BorderThickness="1" Background="{x:Bind Element.ImagedColorBrush, Mode=OneWay}"
+                PointerEntered="panMain_PointerEntered" PointerExited="userControl_LostFocus">
+
+        <StackPanel.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="TextLineBounds" Value="TrimToCapHeight"/>
+                <Setter Property="Margin" Value="2"/>
+            </Style>
+        </StackPanel.Resources>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="540"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="blockNumber.FontSize" Value="12"/>
+                        <Setter Target="blockProp.Visibility" Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <TextBlock x:Name="blockNumber" FontSize="16" Text="{x:Bind Element.Element.AtomicNumber, Mode=OneWay}" />
+        <TextBlock FontWeight="SemiBold" FontSize="28" TextAlignment="Center" Text="{x:Bind Element.Element.Symbol, Mode=OneWay}"/>
+        <Viewbox Stretch="Uniform" MaxHeight="17">
+            <TextBlock x:Name="blockProp" FontSize="12" Text="{x:Bind DisplayedPropertyValue, Mode=OneWay}"
+                           Visibility="Collapsed"/>
+        </Viewbox>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Color_Uniform" xml:space="preserve">
+    <value>Uniforme</value>
+  </data>
+  <data name="Color_ByBlock" xml:space="preserve">
+    <value>Bloc</value>
+  </data>
+  <data name="Color_ByCategory" xml:space="preserve">
+    <value>Catégorie</value>
+  </data>
+  <data name="Color_ByState" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="Color_WithImage" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="Title_ByBlock100" xml:space="preserve">
+    <value>Bloc d</value>
+  </data>
+  <data name="Title_ByBlock102" xml:space="preserve">
+    <value>Bloc f</value>
+  </data>
+  <data name="Title_ByBlock112" xml:space="preserve">
+    <value>Bloc p</value>
+  </data>
+  <data name="Title_ByBlock115" xml:space="preserve">
+    <value>Bloc s</value>
+  </data>
+  <data name="Title_ByCategory0" xml:space="preserve">
+    <value>Non-métal</value>
+  </data>
+  <data name="Title_ByCategory1" xml:space="preserve">
+    <value>Métal alcalin</value>
+  </data>
+  <data name="Title_ByCategory2" xml:space="preserve">
+    <value>Métal alcalino-terreux</value>
+  </data>
+  <data name="Title_ByCategory3" xml:space="preserve">
+    <value>Métal de transition</value>
+  </data>
+  <data name="Title_ByCategory4" xml:space="preserve">
+    <value>Métal pauvre</value>
+  </data>
+  <data name="Title_ByCategory5" xml:space="preserve">
+    <value>Métalloïdes</value>
+  </data>
+  <data name="Title_ByCategory6" xml:space="preserve">
+    <value>Halogène</value>
+  </data>
+  <data name="Title_ByCategory7" xml:space="preserve">
+    <value>Gaz noble</value>
+  </data>
+  <data name="Title_ByCategory8" xml:space="preserve">
+    <value>Lanthanides</value>
+  </data>
+  <data name="Title_ByCategory9" xml:space="preserve">
+    <value>Actinides</value>
+  </data>
+  <data name="Title_ByState0" xml:space="preserve">
+    <value>Gaz</value>
+  </data>
+  <data name="Title_ByState1" xml:space="preserve">
+    <value>Liquide</value>
+  </data>
+  <data name="Title_ByState2" xml:space="preserve">
+    <value>Unie</value>
+  </data>
+  <data name="Title_PeriodicTable" xml:space="preserve">
+    <value>Tableau périodique des éléments</value>
+  </data>
+</root>

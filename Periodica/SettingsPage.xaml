@@ -1,0 +1,159 @@
+﻿<Page
+    x:Class="Bluegrams.Periodica.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewmodels="using:Bluegrams.Periodica.ViewModels"
+    xmlns:local="using:Bluegrams.Periodica"
+    xmlns:controls="using:Bluegrams.Periodica.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+    <Page.Resources>
+        <viewmodels:ThemeToIntConverter x:Key="themeToInt"/>
+        <viewmodels:TemperatureUnitToBoolConverter x:Key="tempSettingToBool"/>
+        <Style TargetType="TextBlock" x:Key="styleTitle">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="LineHeight" Value="24"/>
+            <Setter Property="FontWeight" Value="SemiLight"/>
+            <Setter Property="Padding" Value="0,8"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="styleSetting">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="LineHeight" Value="20"/>
+            <Setter Property="Padding" Value="0,4,16,4"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+        <DataTemplate x:Key="templateComboBox">
+            <TextBlock Text="{Binding Path=Content}"/>
+        </DataTemplate>
+    </Page.Resources>
+    <Page.TopAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource NavigationBackButtonNormalStyle}" Height="48" Click="BackButton_Click"/>
+                    <TextBlock x:Uid="settingsTitle" FontSize="24px" FontWeight="SemiLight" VerticalAlignment="Center"
+                               Margin="16,0,0,0"/>
+                </StackPanel>
+            </CommandBar.Content>
+        </CommandBar>
+    </Page.TopAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot Margin="16,0" x:Name="pivotMain">
+            <Pivot.Resources>
+                <Style TargetType="TextBlock" x:Key="styleHeader">
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                </Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="Width" Value="230"/>
+                    <Setter Property="Margin" Value="0,8"/>
+                </Style>
+                <Style TargetType="StackPanel" x:Key="stackSetting">
+                    <Setter Property="Margin" Value="0,8"/>
+                    <Setter Property="Orientation" Value="Horizontal"/>
+                </Style>
+            </Pivot.Resources>
+            <PivotItem>
+                <PivotItem.Header>
+                    <TextBlock Style="{StaticResource styleHeader}" x:Uid="settingsPivotGeneral"/>
+                </PivotItem.Header>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock x:Uid="settingsHeaderAppearance" Style="{StaticResource styleTitle}"/>
+                        <StackPanel Style="{StaticResource stackSetting}">
+                            <TextBlock x:Uid="settingsTheme" Style="{StaticResource styleSetting}"/>
+                            <ComboBox SelectedIndex="{Binding SelectedTheme, Converter={StaticResource themeToInt}, Mode=TwoWay}">
+                                <ComboBoxItem x:Uid="settingsThemeWindowsTheme"/>
+                                <ComboBoxItem x:Uid="settingsThemeLight"/>
+                                <ComboBoxItem x:Uid="settingsThemeDark"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource stackSetting}">
+                            <TextBlock x:Uid="settingsLanguage" Style="{StaticResource styleSetting}"/>
+                            <StackPanel>
+                                <ToggleSwitch x:Name="toggleCustomLang" x:Uid="settingsToggleCustomLang"/>
+                                <ComboBox x:Name="comLanguage" ItemsSource="{x:Bind AppLanguageOptions}"
+                                      IsEnabled="{Binding ElementName=toggleCustomLang, Path=IsOn}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=NativeName}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                                <TextBlock x:Name="lblLangNotice" x:Uid="settingsLblLangNotice" Opacity="0"
+                                       MaxWidth="250" TextWrapping="WrapWholeWords"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <TextBlock x:Uid="settingsHeaderData" Style="{StaticResource styleTitle}"/>
+                        <StackPanel Style="{StaticResource stackSetting}">
+                            <TextBlock x:Uid="settingsTempUnit" Style="{StaticResource styleSetting}"/>
+                            <StackPanel>
+                                <RadioButton x:Uid="settingsTempUnitCelsius" x:Name="radTempCelsius"
+                                         IsChecked="{Binding TemperatureUnit, Mode=OneTime, Converter={StaticResource tempSettingToBool}, ConverterParameter=Celsius}"/>
+                                <RadioButton x:Uid="settingsTempUnitFahrenheit" x:Name="radTempFahrenheit"
+                                         IsChecked="{Binding TemperatureUnit, Mode=OneTime, Converter={StaticResource tempSettingToBool}, ConverterParameter=Fahrenheit}"/>
+                                <RadioButton x:Uid="settingsTempUnitKelvin" x:Name="radTempKelvin"
+                                         IsChecked="{Binding TemperatureUnit, Mode=OneTime, Converter={StaticResource tempSettingToBool}, ConverterParameter=Kelvin}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource stackSetting}">
+                            <TextBlock x:Uid="settingsShownData" Style="{StaticResource styleSetting}"/>
+                            <ComboBox x:Name="comDisplayedProperty"
+                                      SelectedValue="{Binding DisplayedProperty, Mode=TwoWay}" SelectedValuePath="Value"
+                                  ItemsSource="{x:Bind ElementPropertyOptions}" ItemTemplate="{StaticResource templateComboBox}">
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource stackSetting}" x:Name="stackListProperties">
+                            <TextBlock x:Uid="settingsShownListProperties" Style="{StaticResource styleSetting}"/>
+                            <StackPanel>
+                                <ComboBox SelectedValue="{Binding ListProperties[3], Mode=TwoWay}" SelectedValuePath="Value"
+                                      ItemsSource="{x:Bind ElementPropertyOptions}"
+                                      ItemTemplate="{StaticResource templateComboBox}"/>
+                                <ComboBox SelectedValue="{Binding ListProperties[4], Mode=TwoWay}" SelectedValuePath="Value"
+                                      ItemsSource="{x:Bind ElementPropertyOptions}"
+                                      ItemTemplate="{StaticResource templateComboBox}"/>
+                                <ComboBox SelectedValue="{Binding ListProperties[5], Mode=TwoWay}" SelectedValuePath="Value"
+                                      ItemsSource="{x:Bind ElementPropertyOptions}"
+                                      ItemTemplate="{StaticResource templateComboBox}"/>
+                                <ComboBox SelectedValue="{Binding ListProperties[6], Mode=TwoWay}" SelectedValuePath="Value"
+                                      ItemsSource="{x:Bind ElementPropertyOptions}"
+                                      ItemTemplate="{StaticResource templateComboBox}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+            <!--<PivotItem Visibility="Collapsed">
+                <PivotItem.Header>
+                    <TextBlock Style="{StaticResource styleHeader}" x:Uid="settingsPivotColors"/>
+                </PivotItem.Header>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>-->
+            <PivotItem>
+                <PivotItem.Header>
+                    <TextBlock Style="{StaticResource styleHeader}" x:Uid="settingsPivotAbout"/>
+                </PivotItem.Header>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <controls:AboutControl Website="http://bluegrams.com/periodica" Margin="0,0,0,16"
+                                               MailTo="bluegrams@e.mail.de" StoreID="9PB2TD7P6DT3">
+                            <StackPanel>
+                                <TextBlock x:Uid="settingsLblDataNote" TextWrapping="Wrap"/>
+                                <HyperlinkButton NavigateUri="https://github.com/Bluegrams/periodic-table-data"
+                                                 Content="https://github.com/Bluegrams/periodic-table-data"/>
+                            </StackPanel>
+                        </controls:AboutControl>
+                        <TextBlock x:Uid="settingsHeaderPrivacy" Style="{StaticResource styleTitle}"/>
+                        <TextBlock x:Uid="settingsLblPrivacy"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

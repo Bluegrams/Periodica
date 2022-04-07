@@ -1,0 +1,132 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bluegrams.Periodica.Controls">
+
+    <Style TargetType="ToggleButton">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Padding" Value="0,4"/>
+        <Setter Property="Template" Value="{StaticResource toggleTemplate}"/>
+    </Style>
+
+    <ControlTemplate TargetType="ToggleButton" x:Key="toggleTemplate">
+        <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="700"/>
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="ContentPresenter.FontSize" Value="15"/>
+                            <Setter Target="SortingIcon.FontSize" Value="15"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="PointerOver">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPanel"
+                                               Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseMediumLowBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortingIcon"
+                                                           Storyboard.TargetProperty="Glyph">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="&#xE70E;" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="CheckedPointerOver">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortingIcon"
+                                                           Storyboard.TargetProperty="Glyph">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="&#xE70E;" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPanel"
+                                               Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseMediumLowBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="CheckedPressed">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortingIcon"
+                                                           Storyboard.TargetProperty="Glyph">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="&#xE70E;" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPanel"
+                                               Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Indeterminate">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortingIcon"
+                                                           Storyboard.TargetProperty="Glyph">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="IndeterminatePointerOver">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortingIcon"
+                                                           Storyboard.TargetProperty="Glyph">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPanel"
+                                               Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseMediumLowBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="IndeterminatePressed">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortingIcon"
+                                                           Storyboard.TargetProperty="Glyph">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <RelativePanel x:Name="ContentPanel"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                <FontIcon x:Name="SortingIcon" FontFamily="Segoe MDL2 Assets" Glyph="&#xE70D;"
+                          Margin="4,0" FontSize="12" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <ContentPresenter x:Name="ContentPresenter"
+                          Content="{TemplateBinding Content}"
+                          Padding="{TemplateBinding Padding}"
+                          FontSize="12"
+                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                          TextWrapping="Wrap"
+                          RelativePanel.RightOf="SortingIcon"
+                          RelativePanel.AlignVerticalCenterWithPanel="True">
+                </ContentPresenter>
+            </RelativePanel>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

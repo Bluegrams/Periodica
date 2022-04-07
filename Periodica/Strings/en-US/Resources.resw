@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="detailHdAtomic.Text" xml:space="preserve">
+    <value>Atomic Properties</value>
+  </data>
+  <data name="detailHdConfiguration.Text" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="detailHdHistory.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="detailHdLinks.Text" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="detailHdPhysical.Text" xml:space="preserve">
+    <value>Physical Properties</value>
+  </data>
+  <data name="detailLblAtomicRadius.Text" xml:space="preserve">
+    <value>Atomic Radius</value>
+  </data>
+  <data name="detailLblBlock.Text" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="detailLblBoilingPoint.Text" xml:space="preserve">
+    <value>Boiling Point</value>
+  </data>
+  <data name="detailLblConfiguration.Text" xml:space="preserve">
+    <value>Electron Configuration</value>
+  </data>
+  <data name="detailLblCovalentRadius.Text" xml:space="preserve">
+    <value>Covalent Radius (single)</value>
+  </data>
+  <data name="detailLblDensity.Text" xml:space="preserve">
+    <value>Density</value>
+  </data>
+  <data name="detailLblElectronAffinity.Text" xml:space="preserve">
+    <value>Electron Affinity</value>
+  </data>
+  <data name="detailLblElectronegativity.Text" xml:space="preserve">
+    <value>Electronegativity (Pauling)</value>
+  </data>
+  <data name="detailLblGroup.Text" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="detailLblHeatCapacity.Text" xml:space="preserve">
+    <value>Heat Capacity</value>
+  </data>
+  <data name="detailLblHeatOfFusion.Text" xml:space="preserve">
+    <value>Heat of Fusion</value>
+  </data>
+  <data name="detailLblHeatOfVaporization.Text" xml:space="preserve">
+    <value>Heat of Vaporization</value>
+  </data>
+  <data name="detailLblIonizationEnergy.Text" xml:space="preserve">
+    <value>First Ionization Energy</value>
+  </data>
+  <data name="detailLblMass.Text" xml:space="preserve">
+    <value>Atomic Weight</value>
+  </data>
+  <data name="detailLblMeltingPoint.Text" xml:space="preserve">
+    <value>Melting Point</value>
+  </data>
+  <data name="detailLblMolarVolume.Text" xml:space="preserve">
+    <value>Molar Volume</value>
+  </data>
+  <data name="detailLblOxidationStates.Text" xml:space="preserve">
+    <value>Oxidation States</value>
+  </data>
+  <data name="detailLblPeriod.Text" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="detailLblShellConfig.Text" xml:space="preserve">
+    <value>Electrons per Shell</value>
+  </data>
+  <data name="detailLblThermalConductivity.Text" xml:space="preserve">
+    <value>Thermal Conductivity</value>
+  </data>
+  <data name="detailLblVanDerWaalsRadius.Text" xml:space="preserve">
+    <value>Van-Der-Waals Radius</value>
+  </data>
+  <data name="mainListHeaderNumber.Content" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="mainListHeaderSymbol.Content" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="detailHdAbundance.Text" xml:space="preserve">
+    <value>Abundance</value>
+  </data>
+  <data name="detailLblAbundanceCrust.Text" xml:space="preserve">
+    <value>In Earth's Crust</value>
+  </data>
+  <data name="detailLblAbundanceUniverse.Text" xml:space="preserve">
+    <value>In Universe</value>
+  </data>
+  <data name="detailLblDiscovered.Text" xml:space="preserve">
+    <value>Year of Discovery</value>
+  </data>
+  <data name="detailLblDiscoveredBy.Text" xml:space="preserve">
+    <value>Discovered By</value>
+  </data>
+  <data name="mainButAbout.Label" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="mainButExport.Label" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="settingsPivotAbout.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="settingsPivotGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="settingsHeaderAppearance.Text" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="settingsHeaderData.Text" xml:space="preserve">
+    <value>Periodic Table</value>
+  </data>
+  <data name="settingsLanguage.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="settingsShownData.Text" xml:space="preserve">
+    <value>Shown Element Property</value>
+  </data>
+  <data name="settingsTempUnit.Text" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="settingsTempUnitCelsius.Content" xml:space="preserve">
+    <value>Celsius</value>
+  </data>
+  <data name="settingsTempUnitFahrenheit.Content" xml:space="preserve">
+    <value>Fahrenheit</value>
+  </data>
+  <data name="settingsTempUnitKelvin.Content" xml:space="preserve">
+    <value>Kelvin</value>
+  </data>
+  <data name="settingsTheme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="settingsThemeDark.Content" xml:space="preserve">
+    <value>Dark Theme</value>
+  </data>
+  <data name="settingsThemeLight.Content" xml:space="preserve">
+    <value>Light Theme</value>
+  </data>
+  <data name="settingsThemeWindowsTheme.Content" xml:space="preserve">
+    <value>Windows default</value>
+  </data>
+  <data name="settingsTitle.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="detailButCopy.Label" xml:space="preserve">
+    <value>Copy To Clipboard</value>
+  </data>
+  <data name="mainButSettings.Label" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="mainBoxSearch.PlaceholderText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="mainTxtSearch.Text" xml:space="preserve">
+    <value>Results for</value>
+  </data>
+  <data name="settingsPropAbundanceCrust.Content" xml:space="preserve">
+    <value>Abundance (Earth)</value>
+  </data>
+  <data name="settingsPropAbundanceUniverse.Content" xml:space="preserve">
+    <value>Abundance (Universe)</value>
+  </data>
+  <data name="settingsPropAtomicMass.Content" xml:space="preserve">
+    <value>Atomic Mass</value>
+  </data>
+  <data name="settingsPropDensity.Content" xml:space="preserve">
+    <value>Density</value>
+  </data>
+  <data name="settingsPropElectronegativity.Content" xml:space="preserve">
+    <value>Electronegativity</value>
+  </data>
+  <data name="settingsPropAtomicRadius.Content" xml:space="preserve">
+    <value>Atomic Radius</value>
+  </data>
+  <data name="settingsPropHeatCapacity.Content" xml:space="preserve">
+    <value>Heat Capacity</value>
+  </data>
+  <data name="settingsPropBoilingPoint.Content" xml:space="preserve">
+    <value>Boiling Point</value>
+  </data>
+  <data name="settingsPropMeltingPoint.Content" xml:space="preserve">
+    <value>Melting Point</value>
+  </data>
+  <data name="detailButNext.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Next Element</value>
+  </data>
+  <data name="detailButPrev.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Previous Element</value>
+  </data>
+  <data name="mainLblColorBy.Text" xml:space="preserve">
+    <value>Color By</value>
+  </data>
+  <data name="mainPivList.Header" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="mainPivTable.Header" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="settingsLblLangNotice.Text" xml:space="preserve">
+    <value>The new language is applied after restarting the app.</value>
+  </data>
+  <data name="settingsToggleCustomLang.Header" xml:space="preserve">
+    <value>Use Custom Language</value>
+  </data>
+  <data name="settingsShownListProperties.Text" xml:space="preserve">
+    <value>Properties in List</value>
+  </data>
+  <data name="settingsHeaderPrivacy.Text" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="settingsLblPrivacy.Text" xml:space="preserve">
+    <value>This app does not collect any personal data.</value>
+  </data>
+  <data name="settingsPropLocalizedName.Content" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mainButRate.Label" xml:space="preserve">
+    <value>Rate This App</value>
+  </data>
+  <data name="settingsLblDataNote.Text" xml:space="preserve">
+    <value>All element data is open source and can be found at</value>
+  </data>
+  <data name="settingsPivotColors.Text" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="mainButZoomIn.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="mainButZoomOut.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="mainButDonate.Label" xml:space="preserve">
+    <value>Donate</value>
+  </data>
+</root>
